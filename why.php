@@ -74,15 +74,22 @@
                 LOGIN
               </span>
             </a>
-            <a href="">
+            <a href="autentificare.php">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                INREGISTRARE
+              </span>
+            </a>
+            <a href="cos.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-           <!-- <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <a class="nav-link" href="cautare.php">CATEGORII</a>
-              </button>
-            </form>-->
+            <ul class="navbar-nav">
+  <li class="nav-item ">
+    <a class="nav-link" href="categorii.php">
+      CATEGORII
+    </a>
+  </li>
+</ul>
           </div>
         </div>
       </nav>

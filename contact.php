@@ -62,7 +62,7 @@ $conn->close();
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
   <title>
-    ReSell
+    ReSell-Contact
   </title>
 
   <!-- slider stylesheet -->
@@ -84,7 +84,7 @@ $conn->close();
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.php">
           <span>
-            ReSell
+            ReSell-Contact
           </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -122,15 +122,22 @@ $conn->close();
                 LOGIN
               </span>
             </a>
-            <a href="">
+            <a href="autentificare.php">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                INREGISTRARE
+              </span>
+            </a>
+            <a href="cos.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-           <!-- <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <a class="nav-link" href="cautare.php">CATEGORII</a>
-              </button>
-            </form>-->
+            <ul class="navbar-nav">
+  <li class="nav-item ">
+    <a class="nav-link" href="categorii.php">
+      CATEGORII
+    </a>
+  </li>
+</ul>
           </div>
         </div>
       </nav>

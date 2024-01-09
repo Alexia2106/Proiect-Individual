@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
   <title>
-    ReSell Home
+    ReSell-Home
   </title>
 
   <!-- slider stylesheet -->
@@ -76,18 +76,19 @@
             </a>
             <li class="nav-item">
               <a class="nav-link" href="autentificare.php">
-                <i class="fa fa-user" aria-hidden="true"></i> Autentificare
+                <i class="fa fa-user" aria-hidden="true"></i> Inregistrare
                </a>
             </li>
-            <a href="">
+            <a href="cos.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <!-- <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <a class="nav-link" href="cautare.php">CATEGORII</a>
-              </button>
-            </form>-->
+            <ul class="navbar-nav">
+  <li class="nav-item ">
+    <a class="nav-link" href="categorii.php">
+      CATEGORII
+    </a>
+  </li>
+</ul>
             </ul>
           </div>
         </div>
@@ -662,6 +663,7 @@
 
   <!-- info section -->
 
+ 
   <section class="info_section  layout_padding2-top">
     <div class="social_container">
       <div class="social_box">
@@ -711,7 +713,7 @@
               CONTACT
             </h6>
             <div class="info_link-box">
-              <a href="">
+              <a href="contact.php">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span> Piața Unirii, Timișoara </span>
               </a>
@@ -740,7 +742,6 @@
     <!-- footer section -->
 
   </section>
-
   <!-- end info section -->
 
 

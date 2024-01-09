@@ -1,37 +1,87 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReSell-Recenzii</title>
 
-  <title>
-    ReSell Recenzii
-  </title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <!-- Owl Carousel stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- Responsive styles -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fdf5e6; /* Light Peach */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            color: #cb6e51; /* Dark Peach */
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #cb6e51; /* Dark Peach */
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #cb6e51; /* Dark Peach */
+        }
+    </style>
 </head>
 
 <body>
-  <div class="hero_area">
+<div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -74,15 +124,22 @@
                 LOGIN
               </span>
             </a>
-            <a href="">
+            <a href="autentificare.php">
+              <i class="fa fa-user" aria-hidden="true"></i>
+              <span>
+                INREGISTRARE
+              </span>
+            </a>
+            <a href="cos.php">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i>
             </a>
-            <!-- <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-                <a class="nav-link" href="cautare.php">CATEGORII</a>
-              </button>
-            </form>-->
+            <ul class="navbar-nav">
+  <li class="nav-item ">
+    <a class="nav-link" href="categorii.php">
+      CATEGORII
+    </a>
+  </li>
+</ul>
           </div>
         </div>
       </nav>
@@ -90,91 +147,18 @@
     <!-- end header section -->
 
   </div>
-  <!-- end hero area -->
+    <h2>Adaugă o recenzie</h2>
+    <form action="salveaza_recenzie.php" method="post">
+        <label for="nume">Nume:</label>
+        <input type="text" name="nume" required>
 
-  <!-- client section -->
-  <section class="client_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-            Recenzii
-        </h2>
-      </div>
-    </div>
-    <div class="container px-0">
-      <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    Andrei
-                  </h5>
-        
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                Experiența mea de cumpărare la acest magazin second-hand a fost extraordinară! Am găsit haine și accesorii în stare impecabilă la prețuri accesibile. Mă bucur că pot susține
-                 reciclarea și să contribui la protejarea mediului înconjurător prin achiziționarea acestor produse.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    Maria
-                  </h5>
-          
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                Magazinul oferă o varietate fantastică de articole second-hand, iar calitatea acestora este remarcabilă. Am găsit haine de marcă în stare aproape nouă la prețuri incredibile. 
-                Recomand cu încredere tuturor celor care doresc să își actualizeze garderoba într-un mod sustenabil.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    Andreea
-                  </h5>
-                
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                Îmi place ideea de a cumpăra haine și accesorii second-hand pentru a reduce impactul asupra mediului. Acest magazin nu doar că oferă produse de calitate, 
-                dar și creează o atmosferă prietenoasa. 
-                Este magazinul meu preferat!
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end client section -->
+        <label for="recenzie">Recenzie:</label>
+        <textarea name="recenzie" rows="4" required></textarea>
 
-  <!-- info section -->
+        <button type="submit">Trimite recenzia</button>
+    </form>
 
-  <section class="info_section  layout_padding2-top">
+    <section class="info_section  layout_padding2-top">
     <div class="social_container">
       <div class="social_box">
         <a href="https://www.facebook.com/alexia.serban21">
@@ -252,7 +236,6 @@
     <!-- footer section -->
 
   </section>
-
   <!-- end info section -->
 
 

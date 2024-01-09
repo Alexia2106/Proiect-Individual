@@ -14,7 +14,7 @@
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
   <title>
-    ReSell - Categorii
+    ReSell-Categorii
   </title>
 
   <!-- slider stylesheet -->

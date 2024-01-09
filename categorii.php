@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- Basic -->
+     <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <!-- Mobile Metas -->
@@ -14,9 +12,8 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 
-
   <title>
-    ReSell-Produse
+    ReSell-Categorii
   </title>
 
   <!-- slider stylesheet -->
@@ -29,50 +26,42 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  <style>
-    
-        .shopping-cart-icon {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: white;
-            border-radius: 50%;
-            padding: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+
+    <!-- Adaugă un nou stil CSS pentru a formata lista de categorii -->
+    <style>
+        .category-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
         }
 
-        .shopping-cart-icon i {
-            color: #333; /* culoarea iconului */
-            font-size: 20px;
+        .category-list li {
+            margin: 0 10px;
         }
-        .favorite-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    
-    border: none;
-    padding: 0;
-    cursor: pointer;
+
+        .category-link {
+            text-decoration: none;
+            color: #333;
+        }
+
+.shop_section {
+    margin-top: -115px; /* Ajustează această valoare la nevoie */
+}
+.category_section {
+    margin-bottom: 0px; /* Ajustați la nevoie */
 }
 
-.favorite-button i {
-    color: #ff69b4; /* culoarea pentru inimioara */
-    font-size: 20px;
-    padding: 5px;
+
+.category-list {
+    margin-bottom: 0; /* Ajustați la nevoie */
 }
-.btn-pink {
-        background-color: #ff69b4; /* sau orice altă culoare roz */
-        color: #fff;
-}
+
 
     </style>
-
-
-
 </head>
-
 <body>
-  <div class="hero_area">
+<div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
@@ -90,7 +79,7 @@
             <li class="nav-item ">
               <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="produse.php">
                 Produse
               </a>
@@ -110,98 +99,116 @@
             </li>
           </ul>
           <div class="user_option">
-            <a href="login.php">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                LOGIN
-              </span>
-            </a>
-            <a href="autentificare.php">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                INREGISTRARE
-              </span>
-            </a>
-            <a href="cos.php">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a>
-            <ul class="navbar-nav">
-  <li class="nav-item ">
+  <a href="login.php">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <span>LOGIN</span>
+  </a>
+  <a href="autentificare.php">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <span>INREGISTRARE</span>
+  </a>
+  <a href="cos.php">
+    <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+  </a>
+</div>
+
+<!-- Mută această parte în interiorul elementului ul -->
+<ul class="navbar-nav">
+  <li class="nav-item active">
     <a class="nav-link" href="categorii.php">
       CATEGORII
     </a>
   </li>
 </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- end header section -->
 
+</div>
+</div>
+</nav>
+</header>
   </div>
-  <!-- end hero area -->
 
-  <!-- shop section -->
+    <!-- Adaugă o nouă secțiune pentru categorii -->
+    <section class="category_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>Categorii</h2>
+            </div>
 
-  <?php
-// Conectare la baza de date
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "proiect";
+            <!-- Lista de categorii -->
+            <ul class="category-list">
+                <li><a href="categorii.php?category=geaca" class="category-link">Geci</a></li>
+                <li><a href="categorii.php?category=rochie" class="category-link">Rochii</a></li>
+                <li><a href="categorii.php?category=adidasi" class="category-link">Adidasi</a></li>
+                <li><a href="categorii.php?category=blugi" class="category-link">Blugi</a></li>
+                <li><a href="categorii.php?category=pulover" class="category-link">Pulovere</a></li>
+                <li><a href="categorii.php?category=camasa" class="category-link">Camasi</a></li>
+                <li><a href="categorii.php?category=cizme" class="category-link">Cizme</a></li>
+            </ul>
+        </div>
+    </section>
 
-$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificare conexiune
-if ($conn->connect_error) {
-    die("Conexiune esuata: " . $conn->connect_error);
-}
+    <?php
+    // Verifică dacă s-a selectat o categorie
+    if (isset($_GET['category'])) {
+        $selectedCategory = $_GET['category'];
 
-// Interogare pentru a obține produsele din baza de date
-$sql = "SELECT * FROM produse";
-$result = $conn->query($sql);
+        // Conectare la baza de date
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "proiect";
 
-// Verificare dacă există rezultate
-if ($result->num_rows > 0) {
-    // Afișare produse într-un container
-    echo '<section class="shop_section layout_padding">';
-    echo '<div class="container">';
-    echo '<div class="heading_container heading_center">';
-    echo '<h2>Ultimele produse</h2>';
-    echo '</div>';
-    echo '<div class="row">';
+        $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Afișare fiecare produs
-    while ($row = $result->fetch_assoc()) {
-      echo '<div class="col-sm-6 col-md-4 col-lg-3">';
-      echo '<div class="box">';
-      echo '<a href="adauga_in_cos.php?ID=' . $row['ID'] . '">Adaugă în coș</a>';
-      //echo '<a href="add_to_favorites.php?ID=' . $row['ID'] . '" class="favorite-button">❤️</a>';
-      echo '<div class="img-box">';
-      echo '<img src="' . $row['Poza'] . '" alt="' . $row['Nume'] . '">';
-      echo '</div>';
-      echo '<div class="detail-box">';
-      echo '<h6>' . $row['Nume'] . '</h6>';
-      echo '<h6>Preț <span>' . $row['Pret'] . ' lei</span></h6>';
-      echo '</div>'; 
-      echo '</div>'; 
-      echo '</div>'; 
-  }
-  
-  echo '</div>';
-  echo '</div>';
-  echo '</section>';
-} else {
-  echo "Nu există produse în baza de date.";
-}
+        // Verificare conexiune
+        if ($conn->connect_error) {
+            die("Conexiune esuata: " . $conn->connect_error);
+        }
 
-// Închidere conexiune
-$conn->close();
-?>
+        // Interogare pentru a obține produsele din categoria selectată
+        $sql = "SELECT * FROM produse WHERE Nume LIKE '%$selectedCategory%'";
+        $result = $conn->query($sql);
 
-  <!-- end shop section -->
+        // Verificare dacă există rezultate
+        if ($result->num_rows > 0) {
+            // Afișare produse într-un container
+            echo '<section class="shop_section layout_padding">';
+            echo '<div class="container">';
+            echo '<div class="heading_container heading_center">';
+            echo '<h2>Produse în categoria ' . $selectedCategory . '</h2>';
+            echo '</div>';
+            echo '<div class="row">';
 
-  <!-- info section -->
+            // Afișare fiecare produs
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-sm-6 col-md-4 col-lg-3">';
+                echo '<div class="box">';
+                echo '<a href="adauga_in_cos.php?ID=' . $row['ID'] . '">Adaugă în coș</a>';
+                echo '<div class="img-box">';
+                echo '<img src="' . $row['Poza'] . '" alt="' . $row['Nume'] . '">';
+                echo '</div>';
+                echo '<div class="detail-box">';
+                echo '<h6>' . $row['Nume'] . '</h6>';
+                echo '<h6>Preț <span>' . $row['Pret'] . ' lei</span></h6>';
+                echo '</div>'; 
+                echo '</div>'; 
+                echo '</div>'; 
+            }
+
+            echo '</div>';
+            echo '</div>';
+            echo '</section>';
+        } else {
+            echo "Nu există produse în categoria selectată.";
+        }
+
+        // Închidere conexiune
+        $conn->close();
+    }
+    ?>
+
+   <!-- info section -->
 
   <section class="info_section  layout_padding2-top">
     <div class="social_container">
